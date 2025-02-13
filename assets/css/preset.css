@@ -1,10 +1,7 @@
-html {
-	font-family: sans-serif;
-	font-weight: normal;
-	font-size: 16px;
-}
+/* ------------------ */
+/* --- Browser Reset --- */
 
-div, img, p {
+html, body, header, section, main, div, img, p, ul, li {
 	display: block;
 	position: relative;
 	margin: 0;
@@ -12,6 +9,10 @@ div, img, p {
 	padding: 0;
 	border: 0;
 }
+
+
+
+
 
 
 
@@ -44,12 +45,90 @@ html {
 	::selection { background: var(--color-text); color: var(--color-background);}
 }
 
-h1, h2, h3, h4, h5 {
-	font-weight: inherit;
+/* Hyphenation */
+@supports ( -webkit-hyphenate-limit-before: 10 ) or ( hyphenate-limit-chars: 15 5 7 ) {
+	html {
+		-ms-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+	}
 }
+@supports ( -webkit-hyphenate-limit-before: 10 ) { /* Safari (legacy) */
+	html {
+		-webkit-hyphenate-limit-before: 5;
+		-webkit-hyphenate-limit-after: 7;
+		-ms-hyphenate-limit-lines: 2;
+		-webkit-hyphenate-limit-lines: 2;
+		hyphenate-limit-lines: 2;
+	}
+}
+@supports ( hyphenate-limit-chars: 15 5 7 ) { /* Chrome & Edge (current proposal) */
+	html {
+		-moz-hyphenate-limit-chars: 15 5 7; /* not yet supported */
+		-webkit-hyphenate-limit-chars: 15 5 7; /* not yet supported */
+		-ms-hyphenate-limit-chars: 15 5 7;
+		hyphenate-limit-chars: 15 5 7;
+	}
+}
+html { /* not supported in any browsers currently: */
+	-webkit-hyphenate-limit-last: always;
+	-moz-hyphenate-limit-last: always;
+	-ms-hyphenate-limit-last: always;
+	hyphenate-limit-last: always;
+	-webkit-hyphenate-limit-zone: 8%;
+	-moz-hyphenate-limit-zone: 8%;
+	-ms-hyphenate-limit-zone: 8%;
+	hyphenate-limit-zone: 8%;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: normal;
+	font-size: inherit;
+	margin: 0;
+}
+h2 {
+	font-size: 2rem;
+	letter-spacing: -0.02em;
+}
+h3 {
+	font-size: 1.5rem;
+	letter-spacing: -0.01em;
+}
+
 
 a {
 	color: var(--color-link);
+}
+a:hover {
+	color: currentcolor;
+}
+
+/* .fs--tpg for typographical long texts */
+.fs--tpg p, .fs--tpg ul, .fs--tpg li {
+	margin: 1.2em 0;
+	box-sizing: border-box;
+	max-width: 36em;
+}
+.fs--tpg li {
+	padding-left: 1em;
+}
+.fs--tpg ul li:before {
+	--size: 0.5em;
+	content: '';
+	background-color: currentcolor;
+	height: var(--size);
+	width: var(--size);
+	border-radius: 50%;
+	position: absolute;
+	top: 0.4em;
+	left: 0;
+}
+.fs--tpg em {
+	font-style: normal;
+}
+.fs--tpg h3 {
+	margin-top: 1em;
+	margin-bottom: -0.1em;
 }
 
 /* ------------------ */
