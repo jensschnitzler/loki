@@ -1,0 +1,72 @@
+/* ------------------------------ */
+/* --- Essential Style (copy) --- */
+
+@keyframes marquee-animation {
+	from {
+		transform: translateX(0%);
+	}
+
+	to {
+		transform: translateX(100%);
+	}
+}
+
+.marquee,
+.marquee__wrapper,
+.marquee__item {
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.marquee {
+	--gap: 1ch;
+	--duration: 4s;
+	--width: auto;
+	width: 100vw;
+	max-width: 100%;
+	height: 1.5em;
+}
+
+.marquee__wrapper {
+	position: absolute;
+	width: 400%;
+	min-width: 0px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	white-space: nowrap;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: 0;
+	list-style: none;
+}
+
+.marquee__item {
+	display: block;
+	width: var(--width, auto);
+	min-width: var(--width, 0px);
+	flex: 0 0 var(--width, auto);
+	transform: translateX(0px);
+	padding: 0 calc(var(--gap) / 2);
+}
+
+.marquee--run .marquee__item {
+	transform: translateX(0%);
+	transition: none;
+	will-change: transform;
+	animation: marquee-animation var(--duration, 2s) linear 0s infinite reverse;
+}
+
+/* ------------------------------------- */
+/* --- Decorative Style (don't copy) --- */
+
+.marquee {
+	background-color: var(--color-text);
+	color: var(--color-background);
+}

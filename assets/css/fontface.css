@@ -1,0 +1,18 @@
+/* FONTS ========================================================================== */
+
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'EPI-Trebin';
+	src: url("../fonts/EPITrebin(V240812)-Regular.woff2") format("woff2"),
+		url("../fonts/EPITrebin(V240812)-Regular.woff") format("woff"),
+		url("../fonts/EPITrebin(V240812)-Regular.otf") format("opentype");
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+:root {
+	--font-family-main: 'EPI-Trebin', sans-serif;
+}

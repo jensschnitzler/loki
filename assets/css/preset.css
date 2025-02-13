@@ -1,0 +1,66 @@
+html {
+	font-family: sans-serif;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+div, img, p {
+	display: block;
+	position: relative;
+	margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	border: 0;
+}
+
+
+
+
+/* ------------------ */
+/* --- Typography --- */
+
+html {
+	color: var(--color-text);
+	font-family: var(--font-family-main);
+	font-size: var(--font-size, 18px);
+	line-height: var(--line-height, 1.2rem);
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	letter-spacing: 0;
+	text-align: left;
+	word-break: break-word;
+	-webkit-font-feature-settings: "kern" 1;
+	font-feature-settings: "kern" 1;
+	-webkit-font-kerning: normal;
+	font-kerning: normal;
+	text-rendering: optimizeLegibility;
+	/*-webkit-font-smoothing: subpixel-antialiased;*/
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	/*text-shadow: 0 0 0.2em rgba(0,0,0,.1);*/
+	::-moz-selection { background: var(--color-text); color: var(--color-background);}
+	::selection { background: var(--color-text); color: var(--color-background);}
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: inherit;
+}
+
+a {
+	color: var(--color-link);
+}
+
+/* ------------------ */
+
+
+/* --------------------------------------- */
+/* --- Global Utility & Helper Classes --- */
+
+.screenreader-only {
+	position: absolute !important;
+	text-indent: -9999px !important;
+}
+
+/* --------------------------------------- */

@@ -1,0 +1,52 @@
+html, body {
+	background-color: var(--color-background);
+	color: var(--color-text);
+	font-family: var(--font-family-main, sans-serif);
+}
+
+.logo--loki {}
+
+.logo--funding {
+	height: 2rem;
+}
+
+
+/* --- Page Header --- */
+.header--site, .header--site__inner, .header--site__inner > * {
+	height: 4em;
+}
+.header--site, .header--site__inner {
+	width: 100%;
+}
+.header--site {
+	font-size: 14px;
+	font-size: clamp(14px, 2vw, 30px);
+	line-height: 1.1;
+}
+.header--site__inner {
+	height: 100%;
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+	gap: 0.5em;
+	justify-content: start;
+	align-items: start;
+	color: inherit;
+	text-decoration: none;
+}
+.header--site__inner > * {
+	max-height: 100%;
+	width: auto;
+	min-height: 0;
+}
+.header--site__inner > .logo--loki {}
+.header--site__inner > .project-fullname {
+	text-transform: uppercase;
+	font-variant-numeric: normal;
+	-moz-font-feature-settings: "case";
+	-webkit-font-feature-settings: "case";
+	font-feature-settings: "case";
+	margin-top: -0.25em;
+	letter-spacing: -0.01em;
+}
+
